@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@400;700&display=swap');
+body {
+  font-family: 'Glory', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Glory', sans-serif;
+}
+
+.heading-electronic {
+  background-color: white;
+  color: #000000;
+  text-align: center;
+  padding: 50px 0;
+  margin-top:-30px;
+}
+
+.heading-electronic h1 {
+  margin: 3;
+  font-size: 37px;
+ 
+}
+
+.electronics-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: white;
+  margin-top:-20px;
+}
+
+.electronics-card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns for desktop */
+  grid-gap: 90px;
+  padding: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+  background: none; /* Remove background */
+  box-shadow: none; /* Remove box shadow */
+  cursor: pointer;
+}
+
+.electronics-item {
+  text-align: center;
+}
+
+.electronics-image-container {
+  position: relative;
+  width: 110px; /* Increased size for desktop */
+  height: 110px; 
+  border-radius: 50%;
+  overflow: hidden;
+  background: none; /* Remove background blur */
+  box-shadow: none; /* Remove box shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.electronics-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.electronics-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .electronics-card {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .heading-electronic h1 {
+    margin: 3;
+    font-size: 22px;
+  }
+
+  .electronics-section {
+    margin-top: -40px;
+  }
+
+  .electronics-image-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .electronics-text {
+    font-size: 12px;
+    color: #6A6A6A;
+    font-weight: bold;
+  }
+}

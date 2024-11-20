@@ -1,0 +1,58 @@
+/* Notification for "Added to cart" */
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 200px;
+    background-color: #4E4054;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    font-size: 16px;
+    max-width: 300px;
+    justify-content: space-between;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.close-btn:hover {
+    color: #ff0000; /* Red color on hover */
+}
+
+/* Adjustments for mobile responsiveness */
+@media only screen and (max-width: 768px) {
+    .cart-notification {
+        top: 10px;
+      margin-right:-180px;
+  
+        transform: translate(-50%, 0); /* Center the notification */
+        font-size: 12px; /* Make the text smaller */
+        max-width: 80%; /* Make the notification narrower on mobile */
+        padding: 8px; /* Reduce padding for a cleaner look */
+    }
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex:;
+    align-items: center;
+}
+
+

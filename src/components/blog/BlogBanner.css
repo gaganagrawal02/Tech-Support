@@ -1,0 +1,32 @@
+
+.blog-banner{
+  background-image:  url('/public/images/banner.svg');
+ height:400px;
+ position:absoulute;
+  /* background-color:#15939A ; */
+  background: linear-gradient(
+    rgb(21, 147, 154), /* Gradient start color (black with 50% opacity) */
+    rgba(255, 255, 255, 0.486) /* Gradient end color (black with 50% opacity) */
+  );
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  margin-top: 0;
+
+
+}
+  .blog-banner h1 {
+    font-size: 3rem; /* Large heading size */
+    margin: 0; 
+    padding: 0;/* Remove default margin */
+    font-weight: bold; /* Bold text */
+    padding-top: 115px;
+  }
+  
+  .blog-banner p {
+    font-size: 1.2rem; /* Slightly larger text for readability */
+    margin-top: auto; /* Space between heading and paragraph */
+  }
+  

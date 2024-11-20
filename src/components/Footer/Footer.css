@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@400;700&display=swap');
+
+body {
+  font-family: 'Glory', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.footer h3 {
+  font-family: 'Glory', sans-serif;
+  font-size: 2rem; /* Adjust the size as needed */
+    font-weight: bold; 
+    color: #333; /* Set the text color */
+    text-align: center; /* Center-align the text */
+    margin: 1% 0; /* Remove default margin */
+    padding: 10px; /* Add padding around the heading */
+    border-bottom: 2px solid #15939A; /* Add a bottom border with color */
+    max-width: auto; /* Limit the width of the heading */
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 40px 20px;
+  text-align: center;
+  color: #333;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  flex-basis: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex-basis: 22%;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 5%;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  font-size: 1rem; /* Adjust the size as needed */
+  font-weight: 700;
+  font-size: large;
+}
+
+.footer-section ul li a {
+  color: #545454;
+  text-decoration: none;
+  
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #007bff;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  color: #333;
+  font-size: 24px;
+  padding: 5%;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+.app-links {
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.app-links img {
+  max-width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.app-links img:hover {
+  transform: scale(1.05);
+}
+
+.footer-bottom {
+  font-size: 1rem; 
+    /* font-weight: bold;  */
+    color: #333; /* Set the text color */
+    text-align: center; /* Center-align the text */
+    /* margin: 1% 17%; Remove default margin */
+    /* padding: 10px; Add padding around the heading */
+    border-top: 2px solid #15939A; 
+    max-width: auto; /* Limit the width of the heading */
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .footer-section {
+    flex-basis: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    max-width: 120px;
+  }
+
+  .footer-section h3 {
+    font-size: 16px;
+  }
+
+  .app-links img {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo img {
+    max-width: 100px;
+  }
+
+  .footer-section h3 {
+    font-size: 14px;
+  }
+
+  .app-links img {
+    max-width: 100px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+

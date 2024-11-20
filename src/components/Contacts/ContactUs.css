@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@400;700&display=swap');
+body {
+  font-family: 'Glory', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Glory', sans-serif;
+}
+.contact-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-us-heading {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .contact-us-subheading {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  .contact-us-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .submit-button {
+    background-color:#fCBA00;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* Makes the button cylindrical */
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-us-container {
+      padding: 10px;
+    }
+  
+    .contact-us-heading {
+      font-size: 1.5em;
+    }
+  
+    .contact-us-subheading {
+      font-size: 1em;
+    }
+  }
+  

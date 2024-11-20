@@ -1,0 +1,51 @@
+/* src/NonRefundablePolicy.css */
+
+.non-refundable-policy {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-top:50px;
+  }
+  
+  .policy-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .policy-header h1 {
+    font-size: 2.5em;
+    color: #333;
+  }
+  
+  .policy-content {
+    line-height: 1.6;
+  }
+  
+  .policy-content h2 {
+    font-size: 1.5em;
+    color: #d9534f; /* Red color for emphasis */
+    margin-top: 20px;
+  }
+  
+  .policy-content p, .policy-content ul {
+    margin-bottom: 20px;
+  }
+  
+  .policy-content ul {
+    padding-left: 20px;
+  }
+  
+  .policy-content li {
+    margin-bottom: 10px;
+  }
+  
+  .policy-content a {
+    color: #d9534f;
+    text-decoration: none;
+  }
+  
+  .policy-content a:hover {
+    text-decoration: underline;
+  }
+  

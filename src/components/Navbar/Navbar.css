@@ -1,0 +1,308 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #275571;
+  padding: 15px 20px;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 50px;
+  cursor: pointer;
+  margin-left: 20px; /* Adjusted margin */
+}
+.menu-toggle {
+   display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.navbar-menu {
+  display: flex;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+ /* Makes it take full space in the center */
+ 
+}
+
+.navbar-menu li {
+  margin: 0 20px;
+  cursor: pointer;
+  font-size: 1.3rem;
+}
+
+.navbar-lines {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-lines:hover {
+  color: #ffffff;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  margin-right:50px;
+}
+
+.signin-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 25px;
+  padding: 5px 15px;
+  color: #333;
+  cursor: pointer;
+  margin-right: 30px;
+
+}
+
+.signin-icon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  color: #275571;
+  margin-right: 10px;
+
+}
+
+
+.signin-text {
+  font-size: 16px;
+  color: #275571;
+  font-weight:Bold;
+}
+.signinclass {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.cart-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fcba00;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+
+
+
+@media (max-width: 1000px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 5px 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  
+
+ 
+
+  .navbar-logo img {
+    height: 38px;
+    margin-left: 0px;
+  }
+
+  .logoheading {
+    font-size: 20px;
+    
+    margin-top:10px;
+  }
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .navbar-lines {
+
+    text-align: center;
+    color: Black;
+  }
+
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  .navbar-right {
+    flex: 1;
+    display: flex;
+    
+    flex-direction: row-reverse; 
+    margin-right:20px;
+  }
+
+  .signin-container {
+    padding: 0px 0px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .signin-text {
+    display: none;
+  }
+
+  .signin-icon {
+    background-color:white ;
+  
+   
+    color:#15939A;
+
+    margin-right:0;
+  }
+
+ 
+  .signin-container {
+    margin-right: 0; /* Remove margin on the right */
+  }
+
+  .cart-icon-wrapper {
+    margin-left: 0; /* Remove margin on the left */
+  }
+
+  .cart-icon {
+    margin-right:17px;; /* Align cart icon to the left */
+  }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 60px); /* Full height minus the navbar height */
+    background-color: white;
+    position: fixed; /* Fix the menu below the navbar */
+    top: 56px; /* Start just below the fixed navbar */
+    left: 0;
+    z-index: 999; /* Ensure it stays below the navbar */
+    color: #505050;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 20px;
+    overflow-y: auto; /* Adjust padding for menu items */
+    margin-left:0px; 
+
+  }
+
+  .navbar-menu li {
+    text-align: left;
+    cursor: pointer;
+    margin: 20px 0;
+    padding-bottom: 10px;
+  
+    border-bottom: 1px solid #ccc; /* Adds underline */
+   
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+  body.menu-open {
+    overflow: hidden;
+  }
+  .cart-count {
+    margin-right:16px;
+    margin-top:1px;
+  }
+}
+/* Styling for the small cart popup */
+.cart-popup {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 250px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.cart-popup img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Makes the image circular */
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.cart-popup h3 {
+  font-size: 18px;
+  text-align: center;
+  color: #333;
+}
+
+.cart-popup p {
+  font-size: 14px;
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.cart-popup .close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+
+.cart-popup .close-icon:hover {
+  color: #000; /* Changes color on hover */
+}
+
+/* Hover effect on the shopping cart icon */
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background:#fCBA00;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+
+
+
+

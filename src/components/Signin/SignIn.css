@@ -1,0 +1,26 @@
+/* SignIn.css */
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@400;700&display=swap');
+body {
+  font-family: 'Glory', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Glory', sans-serif;
+}
+.sign-in-container {
+
+  margin-top:100px;
+}
+
+
+
+@media (max-width: 768px) {
+  .sign-in-container {
+   
+    margin-top: 60px;
+    margin-right:0px;
+   
+
+  }
+
+}

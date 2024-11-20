@@ -1,0 +1,564 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@400;700&display=swap');
+
+body {
+  font-family: 'Glory', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Glory', sans-serif;
+}
+.checkout-page {
+  padding: 20px;
+  margin-top: 54px;
+ 
+}
+
+.background-overlay {
+  background-color: #15939A;
+  height: 40vh;
+  padding: 40px;
+  border-radius: 0px;
+width:100%;
+margin-left:-60px;
+  
+}
+
+.checkout-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.active {
+  color: yellow;
+}
+
+.underline-checkout {
+  width: 100%;
+  height: 2px;
+  background-color: yellow;
+  margin-bottom: 20px;
+}
+
+
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card-product-details{
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto; /* Center the card horizontally */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Set a max-width for larger screens */
+}
+.product-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.service-name {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.total-amount {
+  text-align: right;
+  font-weight: bold;
+}
+.total-amount p{
+margin-top:200px;
+}
+.service-details .form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align the items to the top */
+}
+
+.form-left,
+.form-right {
+  display: flex;
+  flex-direction: column; /* Stack form fields in a column */
+  width: 48%; /* Adjust the width to give space to both columns */
+}
+
+.form-left .form-group {
+  margin-bottom: 15px; /* Spacing between form groups */
+}
+
+.form-left input,
+.form-right input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px; /* Add margin to the image */
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Add a gap between the form fields in the same row */
+}
+
+.confirm-btn {
+  background-color:  #fCBA00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px; /* Add margin to separate the button from the form */
+}
+.card-service-slot{
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto; /* Center the card horizontally */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Set a max-width for larger screens */
+
+  
+}
+.service-slot .slot-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slot-left {
+  width: 60%;
+}
+
+.date-slots, .time-slots {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.date-box, .time-box {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.payment-details .bullet-points {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+/* Add this CSS for better spacing and layout */
+.service-details {
+  margin-top: 30px; /* Add top margin to create space below */
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.form-row .form-group {
+  width: 48%; /* Make the form fields take equal width */
+ 
+}
+
+/* Hide the Payment Details and Order Confirmation sections initially */
+.payment-details,
+.confirmation-details {
+  display: none;
+}
+
+/* Show the active section when the button is clicked */
+.show-payment {
+  display: block;
+}
+.payment-details .underline-payment {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin: 20px 0;
+}
+
+
+.card-payment {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto; /* Center the card horizontally */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px;
+  margin-top:50px;
+}
+
+.card-payment h2 {
+  text-align: left;
+}
+
+.bullet-points {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0; /* Remove any left margin */
+}
+
+.bullet-points li {
+  margin-bottom: 15px; /* Increased space between list items */
+  display: flex;
+  align-items: center;
+}
+
+.check-icon {
+  width: 20px; /* Adjust width */
+  height: 20px; /* Adjust height */
+  background-color: #ffc107; /* Yellow background */
+  margin-right: 10px;
+  border-radius: 4px; /* Create rectangular shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000; /* Set color for check mark */
+  font-size: 14px; /* Adjust font size */
+}
+
+.terms-link {
+  color: #007bff; /* Blue color for the link */
+  text-decoration: underline;
+  margin-left:5px; /* Underline the link */
+}
+
+.terms-link:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
+.proceed-btn {
+  background-color: #fCBA00;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: left; /* Align button text to the left */
+  margin-top: 30px;
+  display: block; /* Ensure the button takes up full width */
+  margin-left: 20px; /* Align button to the left */
+}
+
+
+
+.card-service-details {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto; /* Center the card horizontally */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Set a max-width for larger screens */
+  margin-top: 130px;
+}
+
+.card-service-details h2 {
+  text-align: left;
+}
+
+.underline-service {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin: 20px 0;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-left {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+
+.form-right {
+  width: 48%;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.form-row .form-group {
+  width: 48%; /* Make the form fields take equal width */
+}
+
+.form-left label {
+  font-weight: bold;
+}
+
+.form-left input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-right img {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: -30px;
+  margin-left:100px;
+}
+
+.confirm-btn {
+  background-color: #fCBA00;
+  color: white;
+  border: none;
+  padding: 12px 16px; /* Adjusted padding to reduce the size */
+  font-size: 14px; /* Adjusted font size */
+  border-radius: 50px;
+  cursor: pointer;
+
+  width: 150px; /* Slightly smaller button */
+  margin: 20px auto 0 auto;
+}
+
+.form-row .form-group input {
+  width: 100%;
+  padding: 8px; /* Slightly smaller padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Space between input fields */
+}
+
+.form-row .form-group {
+  width: 48%;
+  margin-right: 4%; /* Add spacing between the two fields */
+}
+
+.form-row .form-group:last-child {
+  margin-right: 0; /* Remove margin for the last item in the row */
+}
+
+@media (max-width: 768px) {
+  .checkout-page {
+    margin-top:44px;
+  }
+  .background-overlay{
+    height: 60vh; /* Increase height for mobile */
+    padding: 20px; /* Adjust padding if necessary */
+    margin-left: -20px; 
+  }
+  .form-container {
+    flex-direction: column; /* Stack the form fields vertically on small screens */
+  }
+
+  .form-left, .form-right {
+    width: 100%;
+  }
+
+  .form-row .form-group {
+    width: 100%;
+  }
+  .form-left{
+    margin-left:-8px;
+  }
+  .form-right img {
+   
+    margin-top: 0px;
+    margin-left:30px;
+  }
+}
+.card-service-slot {
+  background-color: white;
+  padding: 20px;
+  margin: 20px auto; /* Center the card horizontally */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Set a max-width for larger screens */
+}
+.card-service-slot h2{
+text-align:left;
+}
+
+.underline-slot{
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin: 20px 0; 
+}
+.slot-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items to the top */
+}
+
+.slot-left {
+  width: 70%; /* Adjust width to provide space for the right side */
+
+
+}
+
+.date-slots, .time-slots {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.date-box, .time-box {
+  background-color:#FAFAFA;
+  color:#585A5B;
+  font-weight:bold;
+  padding: 15px 25px; /* Adjust padding for larger boxes */
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center; /* Center text inside the box */
+  flex: 1; /* Make boxes flexible to take available space */
+  margin-right: 10px; 
+  /* Add space between boxes */
+  display: inline-block;
+}
+
+.date-box:last-child, .time-box:last-child {
+  margin-right: 0; /* Remove margin from the last box */
+}
+
+/* Add icons for navigation */
+.date-box::before, .time-box::before {
+  /* Left arrow icon */
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.date-box::after, .time-box::after {
+ /* Right arrow icon */
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+/* Add custom styles for the selected date box */
+.selected-date {
+  background-color: #0056b3; /* Darker shade of blue */
+  border: 2px solid #004494; /* Darker border color */
+}
+
+/* Style for the service name */
+.slot-right p {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .slot-details {
+    flex-direction: column; /* Stack the slot details vertically on smaller screens */
+  }
+
+  .slot-left, .slot-right {
+    width: 100%;
+  }
+
+  .date-slots, .time-slots {
+    flex-direction: column; /* Stack date and time boxes vertically */
+  }
+
+  .date-box, .time-box {
+    margin-bottom: 10px; /* Add margin between boxes in vertical view */
+  }
+
+  .date-box:last-child, .time-box:last-child {
+    margin-right: 0; /* Adjust margin for the last item */
+  }
+}
+.card-service-slot{
+margin-top:50px;
+}
+
+
+
+@media (max-width: 768px) {
+  .bullet-points {
+    padding-left: 20px; /* Add some padding to the left for better alignment */
+  }
+
+  @media (max-width: 768px) {
+    .bullet-points {
+      padding-left: 20px; /* Add some padding to the left for better alignment */
+    }
+  
+    .bullet-points li {
+      display: flex;
+      align-items: flex-start; /* Align bullet with text vertically */
+      margin-bottom: 30px; /* Space between bullet points */
+    }
+  
+    .check-icon {
+      width: 20px; /* Size of the bullet */
+      height: 20px;
+      margin-right: 12px; /* Gap between the bullet and the text */
+      font-size: 16px; /* Size of the checkmark */
+      line-height: 20px; /* Align checkmark vertically */
+    }
+  
+    .bullet-points li p,
+    .bullet-points li span {
+      margin: 0; /* Remove any default margins */
+      line-height: 1.5; /* Adjust line height for readability */
+      word-wrap: break-word; /* Ensure text wraps properly on mobile */
+    }
+  
+    .terms-link {
+      
+      margin-left:0px; /* Underline the link */
+    }
+
+    .proceed-btn {
+      padding: 12px 25px; /* Reduce button size for mobile */
+  
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .terms-link {
+    
+    margin-left:0px; /* Underline the link */
+  }
+  .proceed-btn {
+    padding: 12px 25px; /* Reduce button size for mobile */
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+

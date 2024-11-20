@@ -1,0 +1,47 @@
+.carousel-container {
+    width: 90%;
+    margin: 0 auto;
+  margin-top:40px;
+  }
+  
+  .carousel-image {
+    width: 93%;
+    height: auto;
+    display: block;
+  
+  }
+  
+  .carousel-slide {
+    padding: 0 15px; /* Adjust the space between images */
+  }
+  
+  .slick-prev, .slick-next {
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ddd;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slick-prev {
+    left: -10px;
+    transform: translateY(-50%);
+  }
+  
+  .slick-next {
+    right: -10px;
+    transform: translateY(-50%);
+  }
+  
+  .slick-prev:hover, .slick-next:hover {
+    background: #f0f0f0;
+  }
+  
+  .slick-prev svg, .slick-next svg {
+    fill: #333; /* Color of the arrow icon */
+  }

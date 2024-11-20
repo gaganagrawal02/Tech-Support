@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@400;700&display=swap');
+
+body {
+  font-family: 'Glory', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Glory', sans-serif;
+}
+
+
+
+
+
+/* General Styling */
+.device-care-container {
+ text-align: center;
+  padding: 5px; /* Further reduce padding */
+  background-color: #15939A;
+  min-height: 30vh; /* Reduce height */
+  background-image: url('/public/images/banner.svg');
+}
+
+/* Page Heading */
+.page-heading {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 30px;
+ margin-top:30px;
+}
+
