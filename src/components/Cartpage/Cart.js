@@ -10,7 +10,7 @@ const Cart = ({ items = [], onClose }) => {
 
   const navigate = useNavigate();
   const handleCheckout = () => {
-    navigate('/signpage');
+    navigate('/signup');
   };
 
   

@@ -22,24 +22,26 @@ import CheckoutPage from './components/checkout/CheckoutPage';
 import MacbookRepair from './components/Service/macbook/MackbookRepair';
 import DesktopSupport from './components/Service/desktop/DesktopSupport';
 import Upgrade from './components/Service/Subscription/Upgrade';
-import ComponentIns from './components/Service/componentins/ComponentIns';
 import CodingIssue from './components/Service/codingissue/CodingIssue';
 import Server from './components/Service/Server/Server';
 import Blog from './components/blog/Blog';
 import Footer from './components/Footer/Footer';
 import TermsOfUse from './components/TermandService/TermsOfUse';
-import Payment from './components/Payment/Payment';
+
 
 import RagisterPage from './components/Ragister/Register'
 import PrivacyPolicy from './components/Privacy/PrivacyPolicy';
 import NonRefundablePolicy from './components/nonrefundable/NonRefundablePolicy';
-import HeroSection from './components/herosection/HeroSection';
-import ServiceGrid from './components/Electronic/ServiceGrid';
 import FAQs from './components/faqs/FAQs';
 import { Helmet } from 'react-helmet-async';
 import PrinterRepair from './components/Service/componentins/ComponentIns';
-import Preloader from './components/Preloader/Preloader';
+// import Preloader from './components/Preloader/Preloader';
 import ImageCarousel from './components/Carosel/ImageCarosel';
+import Signup from './components/Signup/Signup';
+import Login from './components/login/Login';
+import ForgotPassword from './components/forgetpassword/ForgotPassword';
+import ResetPassword from './components/resetpassword/ResetPassword';
+import OrderConfirmationPage from './components/confirmation/OrderConfirmationPage';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -58,9 +60,9 @@ function App() {
 
   const Home = () => (
     <>
-     <Preloader />
+     {/* <Preloader /> */}
     <Helmet>
-      <title>Door2fy | Expert Tech Solutions for Home & Office Needs</title>
+      <title>College Project</title>
       <meta name="description" content="Door2fy offers expert tech services for coding, MacBook, desktop, printer, and server issues. Fast, reliable, and professional solutions at your doorstep." />
     </Helmet>
       
@@ -122,10 +124,15 @@ function App() {
         <Route path="/aboutus" element= {<AboutUs />} />
         <Route path="/otp" element= {<OtpLogin />} />
         <Route path="/terms-of-services" element= {<TermsOfUse />} />
-        <Route path="/payment" element= {<Payment />} />
+       
         <Route path="/refundable-policy" element= {<NonRefundablePolicy/>} />
         <Route path="/register-as-professional" element= {<RagisterPage/>} />
         <Route path="/privacy-policy" element= {<PrivacyPolicy/>} />
+        <Route path="/signup" element= {<Signup/>} />
+        <Route path="/login" element= {<Login/>} />
+        <Route path="/forgot-password" element= {<ForgotPassword/>} />
+        <Route path="/reset-password/:token" element= {<ResetPassword/>} />
+        <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
       </Routes>
     
       </Router>

@@ -5,8 +5,92 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import Cart from '../Cartpage/Cart';
-import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
+
+import axios from "axios";
 const CheckoutPage = () => {
+  const navigate = useNavigate();
+     const handlePaymentSuccess = () => {
+      // After successful payment
+      navigate('/order-confirmation');
+    };
+  const handlePayment = async () => {
+ 
+  
+    try {
+      // Step 1: Create an order on the backend
+      const { data } = await axios.post("http://localhost:5000/api/payment/create-order", {
+        amount: 500, // Amount in INR
+        currency: "INR",
+      });
+
+      if (!data.success) {
+        alert("Failed to create order. Please try again.");
+        return;
+      }
+
+      const { id: order_id, amount: orderAmount, currency } = data.order;
+
+      // Step 2: Load Razorpay script dynamically
+      const scriptLoaded = await new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.src = "https://checkout.razorpay.com/v1/checkout.js";
+        script.onload = resolve;
+        script.onerror = () => resolve(false);
+        document.body.appendChild(script);
+      });
+
+      if (!scriptLoaded) {
+        alert("Failed to load Razorpay SDK. Please check your connection.");
+        return;
+      }
+
+      // Step 3: Open Razorpay payment gateway
+      const options = {
+        key: "rzp_test_ALRfjpu2T2UZO0", // Replace with Razorpay Key ID
+        amount: orderAmount, // Amount in paise (₹500.00 -> 50000 paise)
+        currency,
+        name: "College Project",
+        description: "Payment for your service booking",
+        image: "/logo.png", // Replace with your company logo
+        order_id, // Order ID from backend
+        handler: async (response) => {
+          const { razorpay_payment_id, razorpay_order_id, razorpay_signature } = response;
+
+          // Step 4: Verify payment on the backend
+          const verification = await axios.post(
+            "http://localhost:5000/api/payment/verify-payment",
+            {
+              razorpay_order_id,
+              razorpay_payment_id,
+              razorpay_signature,
+            }
+          );
+
+          if (verification.data.success) {
+            alert("Payment verified successfully!");
+            handlePaymentSuccess();
+          } else {
+            alert("Payment verification failed!");
+          }
+        },
+        prefill: {
+          name: "Customer Name",
+          email: "customer@example.com",
+          contact: "9999999999",
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred during payment processing.");
+    }
+  };
   const location = useLocation();
   
   const [activeTab, setActiveTab] = useState('cart');
@@ -40,10 +124,7 @@ const CheckoutPage = () => {
 
   return (
     <>
-    <Helmet>
-      <title>Secure Checkout - Door2fy | Book Your Service Appointment Online</title>
-      <meta name="description" content="Complete your service booking securely with Door2fy. Choose your preferred time slot finalize your appointment with our easy and secure checkout process." />
-    </Helmet>
+
     <Navbar toggleCart={toggleCart} cartItemCount={cartItems.length} /> {/* Set cartItemCount to 0 for empty cart */}
       
       {isCartOpen && (
@@ -145,8 +226,10 @@ const CheckoutPage = () => {
 
 
           {/* Payment Details Section */}
-        
+         
+
             <div className="payment-details show-payment">
+ 
               <div className="card-payment">
                 <h2>Payment Details</h2>
                 <div className="underline-payment"></div>
@@ -156,20 +239,23 @@ const CheckoutPage = () => {
                   <li><span className="check-icon">✔</span> Any spare part or gas charging (for AC) if needed during first visit/inspection, the charges will be borne by the customer.</li>
                   <li><span className="check-icon">✔ </span> By proceeding, you agree to the <Link to="/terms-of-services" className="terms-link"> Terms Of Services </Link></li>
                 </ul>
-
-                <button className="proceed-btn"  >Proceed To Payment</button>
+                
+                <button className="proceed-btn" onClick={handlePayment} >Proceed To Payment</button>
               </div>
+            
            <Footer />
             </div>
          
 
           {/* Order Confirmation Section */}
           {activeTab === 'confirmation' && (
-            <div className="confirmation-details">
-              <h2>Order Confirmation</h2>
-              {/* Additional content for order confirmation */}
-            </div>
-          )}
+          <div className="confirmation-details">
+            <h2>Payment Successful!</h2>
+            <p>Thank you for your payment. Your order has been successfully placed.</p>
+            <p>Order ID: 12345</p> {/* Add dynamic order ID if available */}
+            <p>We will contact you soon with more details.</p>
+          </div>
+        )}
         </div>
       </div>
       {isCartOpen && <Cart items={cartItems} onClose={closeCart} />} 

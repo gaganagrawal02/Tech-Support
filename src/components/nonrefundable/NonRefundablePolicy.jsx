@@ -5,7 +5,7 @@ import './NonRefundablePolicy.css'; // Import your CSS file for styling
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import Cart from '../Cartpage/Cart';
-import { Helmet } from 'react-helmet-async';
+
 
 const NonRefundablePolicy = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -22,10 +22,7 @@ const closeCart = () => {
 };
   return (
     <>
-    <Helmet>
-      <title>Door2fy Refundable Policy | Flexible & Transparent Returns</title>
-      <meta name="description" content="Learn about Door2fy's refundable policy. We offer a flexible and transparent approach to returns, ensuring your satisfaction with our services. Read more here." />
-    </Helmet>
+ 
 <Navbar toggleCart={toggleCart} cartItemCount={0} /> {/* Set cartItemCount to 0 for empty cart */}
       
       {isCartOpen && (

@@ -48,7 +48,7 @@ const Navbar = ({ toggleCart, cartItemCount }) => {
         </button>
         <div className="navbar-logo">
           <Link to="/" className="navbar-logo">
-            <img src='https://i.postimg.cc/rFgRNhRh/Logo1.png' alt=''></img>
+            <img src='' alt=''></img>
           </Link>
         </div>
       </div>
