@@ -31,6 +31,18 @@ app.use('/api/forgot-password', forgotPasswordRoutes);
 app.use('/api/reset-password', resetPasswordRoutes);
 app.use('/api/payment', razorpayRoutes); 
 
+
+app.post("/api/confirm-order", (req, res) => {
+  const { selectedDate, selectedTimeSlot } = req.body;
+
+  if (!selectedDate || !selectedTimeSlot) {
+    return res.status(400).json({ success: false, message: "Invalid input" });
+  }
+
+  console.log("Order Confirmed:", { selectedDate, selectedTimeSlot });
+
+  res.json({ success: true, message: "Order successfully confirmed!" });
+});
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server running successfully `);

@@ -48,39 +48,42 @@ const Signup = () => {
       <Navbar toggleCart={toggleCart} cartItemCount={0} /> {/* Set cartItemCount to 0 for empty cart */}
       {isCartOpen && <Cart onClose={closeCart} />}
       <div className="signup-container">
-        <h1>Join True Feedback</h1>
+        <h1>Join Our Feedback</h1>
         <p className="signup-subtitle">Sign up to start your anonymous adventure</p>
         {message && <p className="message success">{message}</p>}
         {error && <p className="message error">{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <label className="form-label">Username:</label>
+        <form className="form-signup" onSubmit={handleSubmit}>
+          <label className="form-label">Username *</label>
           <input
             type="text"
             name="username"
+            className="signup-input"
             value={formData.username}
             onChange={handleChange}
             required
           />
-          <label className="form-label">Email:</label>
+          <label className="form-label">Email *</label>
           <input
             type="email"
             name="email"
+             className="signup-input"
             value={formData.email}
             onChange={handleChange}
             required
           />
-          <label className="form-label">Password:</label>
+          <label className="form-label">Password *</label>
           <input
             type="password"
             name="password"
+             className="signup-input"
             value={formData.password}
             onChange={handleChange}
             required
           />
-          <button type="submit">Sign Up</button>
+          <button className="signup-bt" type="submit">Sign Up</button>
         </form>
         <p className="login-link">
-          Already a member? <a href="/login">Sign in</a>
+          Already a member? <a href="/checkout">Sign in</a>
         </p>
       </div>
       <Footer />

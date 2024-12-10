@@ -51,35 +51,36 @@ const ResetPassword = () => {
           Almost done. Enter your new password and you're all set.
         </p>
         {message && <p className="message">{message}</p>}
-        <form onSubmit={handleResetPassword}>
-          <label htmlFor="new-password">New Password *</label>
-          <div className="password-wrapper">
-            <input
-              type="password"
-              id="new-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter Password"
-              required
-            />
-            
-          </div>
-          <label htmlFor="confirm-password">Confirm New Password *</label>
-          <div className="password-wrapper">
-            <input
-              type="password"
-              id="confirm-password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Confirm Password"
-              required
-            />
-           
-          </div>
-          <button type="submit" className="reset-password-button">
-            Reset Password
-          </button>
-        </form>
+        <form className="reset-form" onSubmit={handleResetPassword}>
+  <label htmlFor="new-password" className="reset-label">New Password *</label>
+  <div className="password-wrapper">
+    <input
+      type="password"
+      id="new-password"
+      className="reset-input"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      placeholder="Enter Password"
+      required
+    />
+  </div>
+  <label htmlFor="confirm-password" className="reset-label">Confirm New Password *</label>
+  <div className="password-wrapper">
+    <input
+      type="password"
+      id="confirm-password"
+      className="reset-input"
+      value={confirmPassword}
+      onChange={(e) => setConfirmPassword(e.target.value)}
+      placeholder="Confirm Password"
+      required
+    />
+  </div>
+  <button type="submit" className="reset-password-button">
+    Reset Password
+  </button>
+</form>
+
         <a href="/login" className="back-to-login">← Back To Login</a>
       </div>
       <Footer />

@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 import axios from "axios";
 const CheckoutPage = () => {
+  
   const navigate = useNavigate();
      const handlePaymentSuccess = () => {
       // After successful payment
@@ -121,6 +122,38 @@ const CheckoutPage = () => {
   // const handleProceedToPayment = () => {
   //   setActiveTab('payment'); // Switch to Payment Details tab on button click
   // };
+  const [selectedDate, setSelectedDate] = useState("Tomorrow, 11 Dec");
+  const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
+
+  const dates = [
+    { date: "Today, 10 Dec", slotAvailable: false },
+    { date: "Tomorrow, 11 Dec", slotAvailable: true },
+    { date: "Thursday, 12 Dec", slotAvailable: true },
+    { date: "Friday, 13 Dec", slotAvailable: true },
+  ];
+
+  const timeSlots = ["10 AM - 2 PM", "2 PM - 6 PM"];
+
+  const handleDateSelection = (date) => {
+    if (date.slotAvailable) {
+      setSelectedDate(date.date);
+      setSelectedTimeSlot(""); // Reset time slot
+    }
+  };
+
+  const handleTimeSlotSelection = (slot) => {
+    setSelectedTimeSlot(slot);
+  };
+
+  const handleConfirm = () => {
+    if (!selectedDate || !selectedTimeSlot) {
+      alert("Please select a date and time slot.");
+      return;
+    }
+    console.log("Order confirmed for:", selectedDate, selectedTimeSlot);
+    // Send data to the backend
+    
+  };
 
   return (
     <>
@@ -222,7 +255,59 @@ const CheckoutPage = () => {
 
               {/* Service Slot Section */}
 
+              <div className="checkout-paged">
+      <h2>Select Service Slot</h2>
+      <div className="service-card">
+        <h3>
+          <img src="air-conditioner-icon.png" alt="Air Conditioner" />
+          Air Conditioner
+        </h3>
+        <p>Wet Preventive Maintenance X 1</p>
+        <p>Split AC</p>
+      </div>
 
+      <div className="date-selection">
+        <h4>Select date and time</h4>
+        <div className="date-options">
+          {dates.map((date, index) => (
+            <button
+              key={index}
+              className={`date-button ${
+                selectedDate === date.date ? "selected" : ""
+              }`}
+              disabled={!date.slotAvailable}
+              onClick={() => handleDateSelection(date)}
+            >
+              {date.date}
+              {date.slotAvailable ? <span>Slot available</span> : <span>No slot available</span>}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {selectedDate && (
+        <div className="time-slot-selection">
+          <h5>{selectedDate}</h5>
+          <div className="time-slots">
+            {timeSlots.map((slot, index) => (
+              <button
+                key={index}
+                className={`time-slot-button ${
+                  selectedTimeSlot === slot ? "selected" : ""
+                }`}
+                onClick={() => handleTimeSlotSelection(slot)}
+              >
+                {slot}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <button className="confirm-button" onClick={handleConfirm}>
+        Confirm
+      </button>
+    </div>
 
 
           {/* Payment Details Section */}

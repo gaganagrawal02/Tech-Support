@@ -74,7 +74,7 @@ h1, h2, h3 {
     height: 350px; /* Adjust height as needed */
     position: relative; /* Ensure it can contain absolutely positioned elements */
     z-index: 1; /* Ensure banner is below the card */
-    background-color:#15939A;
+    background-color:#000;
   }
 
   .ac-repair-section {
@@ -272,11 +272,11 @@ h1, h2, h3 {
   .add-button {
     background-color: white;
    margin-bottom:5px;
-    color: #15939A;
+   color: #000 !important;
     padding: 5px 15px;
     border: none;
     border-radius: 5px;
-    border: 2px solid #15939A;
+    border: 2px solid #000 !important;
     cursor: pointer;
     display: flex;
     align-items: center;

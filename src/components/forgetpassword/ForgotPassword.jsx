@@ -33,25 +33,27 @@ const ForgotPassword = () => {
       <Navbar toggleCart={toggleCart} cartItemCount={0} />
       {isCartOpen && <Cart onClose={closeCart} />}
       <div className="forgot-password-container">
-        <h1>Reset your password</h1>
-        <p className="instructions">
-          Have no fear. We'll email you instructions to reset your password.
-          If you don't have access to your email, we can try account recovery.
-        </p>
-        {message && <p className="message">{message}</p>}
-        <form onSubmit={handleForgotPassword}>
-          <label htmlFor="email">Email Address *</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter email address"
-            required
-          />
-          <button type="submit" className="submit-button">Submit</button>
-        </form>
-        <a href="/login" className="back-to-login">← Back To Login</a>
+        <div className="forgot-password-box">
+          <h1>Reset Your Password</h1>
+          <p className="instructions">
+            No worries, we’ve got you covered! Enter your email below, and we’ll send you instructions to reset your password.
+          </p>
+          {message && <p className="message">{message}</p>}
+          <form className="forgot-password-lab" onSubmit={handleForgotPassword}>
+  <label htmlFor="email" className="forgot-password-label">Email Address *</label>
+  <input
+    type="email"
+    id="email"
+    value={email}
+    onChange={(e) => setEmail(e.target.value)}
+    placeholder="Enter your email address"
+    required
+    className="forgot-password-input"
+  />
+  <button type="submit" className="submit-button">Submit</button>
+</form>
+          <a href="/login" className="back-to-login">← Back To Login</a>
+        </div>
       </div>
       <Footer />
     </>

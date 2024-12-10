@@ -38,13 +38,13 @@ margin-left:-60px;
 }
 
 .active {
-  color: yellow;
+  color: #fCBA00;
 }
 
 .underline-checkout {
   width: 100%;
   height: 2px;
-  background-color: yellow;
+  background-color: #fCBA00;
   margin-bottom: 20px;
 }
 
@@ -559,6 +559,60 @@ margin-top:50px;
     margin-right: auto;
   }
 
+}
+
+.checkout-paged{
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.service-card {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.service-card img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.date-selection, .time-slot-selection {
+  margin-bottom: 20px;
+}
+
+.date-options, .time-slots {
+  display: flex;
+  gap: 10px;
+}
+
+.date-button, .time-slot-button, .confirm-button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.date-button.selected, .time-slot-button.selected, .confirm-button:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+.confirm-button {
+  display: block;
+  margin: 20px auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
 }
 
 

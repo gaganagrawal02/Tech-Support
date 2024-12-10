@@ -23,21 +23,22 @@
   margin-bottom: 20px;
 }
 
-form {
+.login-frm{
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-label {
+.login-lab {
   font-size: 14px;
-  font-weight: 500;
-  color: #555;
+  font-weight:bold;
+  color: #00;
   text-align: left;
+  margin-bottom:-4px;
 }
 
-input {
-  width: 100%;
+.login-inp {
+  width: 95%;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -75,25 +76,7 @@ input {
   background-color: #0056b3;
 }
 
-.google-login {
-  background-color: #f1f1f1;
-  color: #333;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: bold;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  cursor: pointer;
-}
 
-.google-login img {
-  width: 20px;
-  height: 20px;
-}
 
 .signup-link {
   margin-top: 15px;
@@ -108,4 +91,29 @@ input {
 
 .signup-link a:hover {
   text-decoration: underline;
+}
+
+
+@media (max-width: 480px) {
+  .login-container {
+    margin-top: 80px; /* Further reduced top margin for small screens */
+    width:80%;
+  }
+
+  .login-container h2 {
+    font-size: 18px; /* Smaller heading for small screens */
+  }
+
+  .login-container p {
+    font-size: 11px; /* Further reduced subtitle text */
+  }
+
+  .login-lab {
+    font-size: 11px; /* Smaller label text */
+  }
+
+  .login-button {
+    font-size: 11px; /* Further reduced font size */
+    padding: 6px 8px; /* Smaller padding for compact buttons */
+  }
 }

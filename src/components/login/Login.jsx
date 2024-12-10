@@ -40,19 +40,21 @@ const Login = () => {
         <h2>Welcome back</h2>
         <p>Please enter your details</p>
         {message && <p className="message">{message}</p>}
-        <form onSubmit={handleLogin}>
-          <label>Email address</label>
+        <form className="login-frm" onSubmit={handleLogin}>
+          <label className="login-lab">Email address *</label>
           <input
             type="email"
             name="email"
+            className="login-inp"
             value={formData.email}
             onChange={handleChange}
             required
           />
-          <label>Password</label>
+          <label className="login-lab">Password *</label>
           <input
             type="password"
             name="password"
+            className="login-inp"
             value={formData.password}
             onChange={handleChange}
             required

@@ -226,7 +226,7 @@ const DesktopSupport = () => {
 
     </div>
     <div className="why-choose-section">
-      <h2 className="why-choose-heading">Why Choose Door2fy Desktop Repair Service in Delhi?</h2>
+      <h2 className="why-choose-heading">Why Choose College Project Desktop Repair Service in Delhi?</h2>
       <div className="why-choose-grid">
         <div className="why-choose-card">
           <img

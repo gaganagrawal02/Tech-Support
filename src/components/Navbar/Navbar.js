@@ -65,9 +65,9 @@ const Navbar = ({ toggleCart, cartItemCount }) => {
           {isMobile ? (
             <FaUser className="signin-icon" />
           ) : (
-            <Link to="/signpage" className="signinclass">
+            <Link to="/signup" className="signinclass">
               <FaUser className="signin-icon" />
-              <span className="signin-text">Sign In</span>
+              <span className="signin-text">Sign Up</span>
             </Link>
           )}
         </div>
