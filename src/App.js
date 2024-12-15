@@ -42,7 +42,6 @@ import Login from './components/login/Login';
 import ForgotPassword from './components/forgetpassword/ForgotPassword';
 import ResetPassword from './components/resetpassword/ResetPassword';
 import OrderConfirmationPage from './components/confirmation/OrderConfirmationPage';
-import Check from './components/check/Check';
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -134,7 +133,7 @@ function App() {
         <Route path="/forgot-password" element= {<ForgotPassword/>} />
         <Route path="/reset-password/:token" element= {<ResetPassword/>} />
         <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
-        <Route path="/check" element={<Check/>} />
+       
       </Routes>
     
       </Router>

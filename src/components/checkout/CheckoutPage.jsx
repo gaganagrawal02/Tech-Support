@@ -122,39 +122,73 @@ const CheckoutPage = () => {
   // const handleProceedToPayment = () => {
   //   setActiveTab('payment'); // Switch to Payment Details tab on button click
   // };
-  const [selectedDate, setSelectedDate] = useState("Tomorrow, 11 Dec");
+  const [selectedDate, setSelectedDate] = useState("");
   const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
 
-  const dates = [
-    { date: "Today, 10 Dec", slotAvailable: false },
-    { date: "Tomorrow, 11 Dec", slotAvailable: true },
-    { date: "Thursday, 12 Dec", slotAvailable: true },
-    { date: "Friday, 13 Dec", slotAvailable: true },
-  ];
-
-  const timeSlots = ["10 AM - 2 PM", "2 PM - 6 PM"];
-
-  const handleDateSelection = (date) => {
-    if (date.slotAvailable) {
-      setSelectedDate(date.date);
-      setSelectedTimeSlot(""); // Reset time slot
-    }
-  };
-
-  const handleTimeSlotSelection = (slot) => {
-    setSelectedTimeSlot(slot);
-  };
-
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (!selectedDate || !selectedTimeSlot) {
       alert("Please select a date and time slot.");
       return;
     }
-    console.log("Order confirmed for:", selectedDate, selectedTimeSlot);
-    // Send data to the backend
-    
+    try {
+      const response = await axios.post("http://localhost:5000/api/confirm-order", {
+        selectedDate,
+        selectedTimeSlot,
+      });
+
+      if (response.data.success) {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      console.error("Error confirming order:", error);
+      alert("Failed to confirm order. Please try again.");
+    }
   };
 
+
+ // State for form inputs
+ const [formData, setFormData] = useState({
+  name: "",
+  mobileNo: "",
+  address: "",
+  city: "",
+});
+
+// State for success/error message
+const [message, setMessage] = useState("");
+
+// Handle input change
+const handleInputChange = (e) => {
+  const { name, value } = e.target;
+  setFormData({
+    ...formData,
+    [name]: value,
+  });
+};
+
+// Handle form submission
+const handleFormSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/api/users/saveDetails", // Correct endpoint
+      formData
+    );
+
+    if (response.status === 200) {
+      setMessage("Details saved successfully!");
+      setFormData({
+        name: "",
+        mobileNo: "",
+        address: "",
+        city: "",
+      });
+    }
+  } catch (error) {
+    console.error("Error:", error.response?.data || error.message);
+    setMessage("Error saving details. Please try again.");
+  }};
   return (
     <>
 
@@ -208,106 +242,109 @@ const CheckoutPage = () => {
 {/* Service Details Form */}
 {/* Service Details Form */}
 <div className="card-service-details">
-  <h2>Enter Service Details</h2>
-  <div className="underline-service"></div>
-  <div className="form-container">
-    <div className="form-left">
-      <div className="form-row">
-        <div className="form-group">
-          <label>Name</label>
-          <input type="text" placeholder="Enter Your Full Name" />
-        </div>
-        <div className="form-group">
-          <label>Mobile No</label>
-          <input type="text" placeholder="Enter Your Mobile No" />
-        </div>
-      </div>
-      <div className="form-row">
-        <div className="form-group">
-          <label>Pincode</label>
-          <input type="text" placeholder="Enter Your Six Digit Pincode" />
-        </div>
-        <div className="form-group">
-          <label>City/State</label>
-          <input type="text" placeholder="Enter City/State" />
-        </div>
-      </div>
-      <div className="form-row">
-        <div className="form-group">
-          <label>Address</label>
-          <input type="text" placeholder="Enter Address" />
-        </div>
-        <div className="form-group">
-          <label>Landmark</label>
-          <input type="text" placeholder="Enter Street" />
-        </div>
-      </div>
-      <button className="confirm-btn">Confirm</button>
-    </div>
-    <div className="form-right">
-      <img src="images/laptop-protection.svg" alt="Google Map" />
-    </div>
-  </div>
+      <h2>Enter Service Details</h2>
+      <div className="underline-service"></div>
+      <form onSubmit={handleFormSubmit} className="form-container">
+        <div className="form-left">
+          <div className="form-row">
+            <div className="form-group">
+              <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter Your Full Name"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Mobile No</label>
+              <input
+                type="text"
+                name="mobileNo"
+                placeholder="Enter Your Mobile No"
+                value={formData.mobileNo}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="form-row">
+            <div className="form-group">
+              <label>Address</label>
+              <input
+                type="text"
+                name="address"
+                placeholder="Enter Address"
+                value={formData.address}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>City</label>
+              <input
+                type="text"
+                name="city"
+                placeholder="Enter City"
+                value={formData.city}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+          </div>
 
-</div>
+          <button type="submit" className="confirm-btn">
+            Confirm
+          </button>
+          {message && <p className="message">{message}</p>}
+        </div>
+        <div className="form-right">
+          <img src="images/laptop-protection.svg" alt="Illustration" />
+        </div>
+      </form>
+    </div>
 
 
 
               {/* Service Slot Section */}
 
-              <div className="checkout-paged">
-      <h2>Select Service Slot</h2>
-      <div className="service-card">
-        <h3>
-          <img src="air-conditioner-icon.png" alt="Air Conditioner" />
-          Air Conditioner
-        </h3>
-        <p>Wet Preventive Maintenance X 1</p>
-        <p>Split AC</p>
-      </div>
+              <div className="Date-slot">
 
-      <div className="date-selection">
-        <h4>Select date and time</h4>
-        <div className="date-options">
-          {dates.map((date, index) => (
-            <button
-              key={index}
-              className={`date-button ${
-                selectedDate === date.date ? "selected" : ""
-              }`}
-              disabled={!date.slotAvailable}
-              onClick={() => handleDateSelection(date)}
-            >
-              {date.date}
-              {date.slotAvailable ? <span>Slot available</span> : <span>No slot available</span>}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {selectedDate && (
-        <div className="time-slot-selection">
-          <h5>{selectedDate}</h5>
-          <div className="time-slots">
-            {timeSlots.map((slot, index) => (
-              <button
-                key={index}
-                className={`time-slot-button ${
-                  selectedTimeSlot === slot ? "selected" : ""
-                }`}
-                onClick={() => handleTimeSlotSelection(slot)}
-              >
-                {slot}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <button className="confirm-button" onClick={handleConfirm}>
-        Confirm
-      </button>
+  <div className="Date-slot-left">
+    <h1 className="checks-ser">Select Service Slot</h1>
+    <div className="underline-service"></div>
+    <div>
+      <h3 className="service-check">Select Date</h3>
+      <input
+        className="Date-input"
+        type="date"
+        value={selectedDate}
+        onChange={(e) => setSelectedDate(e.target.value)}
+      />
     </div>
+    <div>
+      <h3 className="service-check">Select Time Slot</h3>
+      <select
+        className="Time-slot"
+        value={selectedTimeSlot}
+        onChange={(e) => setSelectedTimeSlot(e.target.value)}
+      >
+        <option value="">--Select Time Slot--</option>
+        <option value="10 AM - 2 PM">10 AM - 2 PM</option>
+        <option value="2 PM - 6 PM">2 PM - 6 PM</option>
+      </select>
+    </div>
+    <button className="button-time" onClick={handleConfirm}>
+      Confirm
+    </button>
+  </div>
+
+
+
+</div>
+
 
 
           {/* Payment Details Section */}

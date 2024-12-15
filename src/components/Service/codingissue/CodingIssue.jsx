@@ -222,7 +222,7 @@ const CodingIssue = () => {
       <div className="why-choose-grid">
         <div className="why-choose-card">
           <img
-            src="https://i.postimg.cc/D01Lhs68/sec1.webp"
+            src="/images/sec1.webp"
             alt="Qualified Engineers"
             className="why-choose-image"
           />
@@ -233,7 +233,7 @@ const CodingIssue = () => {
         </div>
         <div className="why-choose-card">
           <img
-            src="https://i.postimg.cc/g22XS1Cw/sec2.webp"
+            src="/images/sec2.webp"
             alt="High-Quality AC Repairing"
             className="why-choose-image"
           />
@@ -244,7 +244,7 @@ const CodingIssue = () => {
         </div>
         <div className="why-choose-card">
           <img
-            src="https://i.postimg.cc/bvGG8kNp/sec3.webp"
+            src="/images/sec3.webp"
             alt="Service Expertise"
             className="why-choose-image"
           />

@@ -10,12 +10,12 @@ const ElectronicsSection = () => {
     navigate(link); // Navigate to the specific link when the image is clicked
   };
   const electronicsData = [
-    { id: 1,  imgSrc: 'https://i.postimg.cc/g2RDSHYf/1.png', text: 'Macbook Support',link: '/macbook-repair' } ,
-    { imgSrc: 'https://i.postimg.cc/XqpKwwH1/4.png', text: 'Laptop Support', link: '/windows-repair'  },
-    { imgSrc: 'https://i.postimg.cc/HLgtf8nj/3.png', text: 'Desktop suppport', link: '/desktop-repair' },
-    { imgSrc: 'https://i.postimg.cc/R05P4bsS/2.png', text: 'Printer Support', link: '/printer-repair' },
-    { imgSrc: 'https://i.postimg.cc/GhTJtxsH/5.png', text: 'Subscription', link: '/upgrade' },
-    { imgSrc: 'https://i.postimg.cc/g2RDSHYf/1.png', text: 'Coding Issue', link: '/codingIssue' },
+    { id: 1,  imgSrc: '/images/1.png', text: 'Macbook Support',link: '/macbook-repair' } ,
+    { imgSrc: '/images/4.png', text: 'Laptop Support', link: '/windows-repair'  },
+    { imgSrc: '/images/3.png', text: 'Desktop suppport', link: '/desktop-repair' },
+    { imgSrc: '/images/2.png', text: 'Printer Support', link: '/printer-repair' },
+    { imgSrc: '/images/5.png', text: 'Subscription', link: '/upgrade' },
+    { imgSrc: '/images/1.png', text: 'Coding Issue', link: '/codingIssue' },
   ];
   return (
     

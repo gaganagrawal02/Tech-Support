@@ -67,10 +67,10 @@ const Footer = () => {
             <h3>Download Our App</h3>
             <div className="app-links">
               <a href="https://appstore.com" target="_blank" rel="noopener noreferrer">
-                <img src="https://i.postimg.cc/Njh8H21b/Appstore.webp" alt="App Store" />
+                <img src="/images/Appstore.webp" alt="App Store" />
               </a>
               <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-                <img src="https://i.postimg.cc/gcZK4PGg/Google-Play.webp" alt="Google Play" />
+                <img src="/images/Google-Play.webp" alt="Google Play" />
               </a>
             </div>
           </div>

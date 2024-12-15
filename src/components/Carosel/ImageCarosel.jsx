@@ -56,16 +56,16 @@ const ImageCarosel = () => {
     <div className="carousel-container">
       <Slider {...settings}>
         <div className="carousel-slide">
-          <img src="https://i.postimg.cc/hGV2vWhy/Crosel1.webp" alt="Slide 1" className="carousel-image" />
+          <img src="/images/Crosel1.webp" alt="Slide 1" className="carousel-image" />
         </div>
         <div className="carousel-slide">
-          <img src="https://i.postimg.cc/G2rqs7yc/Crosel2.webp" alt="Slide 2" className="carousel-image" />
+          <img src="/images/Crosel2.webp" alt="Slide 2" className="carousel-image" />
         </div>
         <div className="carousel-slide">
-          <img src="https://i.postimg.cc/bY5k7Vws/Crosel3.webp" alt="Slide 3" className="carousel-image" />
+          <img src="/images/Crosel3.webp" alt="Slide 3" className="carousel-image" />
         </div>
         <div className="carousel-slide">
-          <img src="https://i.postimg.cc/v8CXrZ9q/Crosel4.webp" alt="Slide 4" className="carousel-image" />
+          <img src="/images/Crosel4.webp" alt="Slide 4" className="carousel-image" />
         </div>
         {/* Add more slides as needed */}
       </Slider>
