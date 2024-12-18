@@ -186,8 +186,8 @@ const handleFormSubmit = async (e) => {
       });
     }
   } catch (error) {
-    console.error("Error:", error.response?.data || error.message);
-    setMessage("Error saving details. Please try again.");
+    console.error("Error details:", error.response?.data || error.message);
+    setMessage(error.response?.data?.message || "Error saving details . Please try again.");
   }};
   return (
     <>

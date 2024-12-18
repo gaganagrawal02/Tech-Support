@@ -42,7 +42,8 @@ import Login from './components/login/Login';
 import ForgotPassword from './components/forgetpassword/ForgotPassword';
 import ResetPassword from './components/resetpassword/ResetPassword';
 import OrderConfirmationPage from './components/confirmation/OrderConfirmationPage';
-
+import ThankYouPage from './components/thanku/ThankuPage';
+import PrivateRoute from './components/private/PrivateRoute'
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   
@@ -115,11 +116,11 @@ function App() {
         <Route path = "/printer-repair" element={<PrinterRepair />}/>
         <Route path = "/server" element={<Server />}/>
         <Route path = "/CodingIssue" element={<CodingIssue />}/>
+        <Route path="/signup" element= {<Signup/>} />
+        <Route path="/login" element= {<Login/>} />
         <Route path = "/contactUs" element={<ContactUs />}/>
         <Route path = "/cartPage" element={<Cart />}/>
-        <Route path="/checkout" element={<CheckoutPage  />} />
-        {/* <Route path = "/cart" element={<Cart/>}/> */}
-        {/* Add more routes as needed */}
+        <Route path = "/checkout" element={<CheckoutPage/>}/>
         {<Route path = "/blog" element={<Blog />}/> }
         <Route path="/aboutus" element= {<AboutUs />} />
         <Route path="/otp" element= {<OtpLogin />} />
@@ -128,12 +129,12 @@ function App() {
         <Route path="/refundable-policy" element= {<NonRefundablePolicy/>} />
         <Route path="/register-as-professional" element= {<RagisterPage/>} />
         <Route path="/privacy-policy" element= {<PrivacyPolicy/>} />
-        <Route path="/signup" element= {<Signup/>} />
-        <Route path="/login" element= {<Login/>} />
+       
         <Route path="/forgot-password" element= {<ForgotPassword/>} />
         <Route path="/reset-password/:token" element= {<ResetPassword/>} />
         <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
-       
+        <Route path="/thanku" element={<ThankYouPage/>} />
+        <Route path="*" element={<h1>404 Page Not Found</h1>} />
       </Routes>
     
       </Router>

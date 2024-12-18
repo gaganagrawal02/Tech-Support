@@ -6,10 +6,6 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   resetToken: String,
   resetTokenExpiry: Date,
-  name: { type: String, required: false }, // Not required if saving other details
-  mobileNo: { type: String, required: true },
-  address: { type: String, required: true },
-  city: { type: String, required: true },
 });
 
 module.exports = mongoose.model("User", userSchema);

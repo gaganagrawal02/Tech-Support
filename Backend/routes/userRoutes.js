@@ -1,32 +1,39 @@
 const express = require("express");
-const User = require("../models/User");
+const Confirm = require("../models/Confirm"); // Use the Confirm model
 const router = express.Router();
 
-// Save User Details
 router.post("/saveDetails", async (req, res) => {
   const { name, mobileNo, address, city } = req.body;
 
-  // Validate input fields
+  // Validate required fields
   if (!mobileNo || !address || !city) {
-    return res.status(400).json({ message: "Mobile number, address, and city are required." });
+    return res
+      .status(400)
+      .json({ message: "Mobile number, address, and city are required." });
   }
 
   try {
-    const newUser = new User({
+    // Save user details
+    const newUser = new Confirm({
       name: name || "Anonymous", // Default name if not provided
       mobileNo,
       address,
       city,
     });
 
-    await newUser.save();
-    res.status(200).json({ message: "Details saved successfully!" });
+    await newUser.save(); // Save to database
+    return res.status(200).json({ message: "Details saved successfully!" });
   } catch (error) {
-    // Handle duplicate key error (e.g., unique email)
     if (error.code === 11000) {
-      return res.status(400).json({ message: "User already exists.", error });
+      // Duplicate key error (unique constraint violation)
+      return res
+        .status(400)
+        .json({ message: "User with this mobile number already exists." });
     }
-    res.status(500).json({ message: "Error saving details", error });
+    console.error("Error saving details:", error);
+    return res
+      .status(500)
+      .json({ message: "Error saving details. Please try again later." });
   }
 });
 

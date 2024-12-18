@@ -83,7 +83,7 @@ const Signup = () => {
           <button className="signup-bt" type="submit">Sign Up</button>
         </form>
         <p className="login-link">
-          Already a member? <a href="/checkout">Sign in</a>
+          Already a member? <a href="/login">Sign in</a>
         </p>
       </div>
       <Footer />

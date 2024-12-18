@@ -1,0 +1,66 @@
+/* Container Styles */
+.thankyou-container {
+    text-align: center;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000;
+    margin-top:100px;
+  }
+  
+  /* Checkmark Icon */
+  .icon-checkmark {
+    font-size: 4rem;
+  
+    margin-bottom: 1rem;
+  }
+  
+  /* Heading Styles */
+  .thankyou-heading {
+    font-size: 2rem;
+    color: #1f4b99;
+    margin-bottom: 1rem;
+  }
+  
+  /* Instructions */
+  .thankyou-instructions {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Updates Section Heading */
+  .updates-heading {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  /* WhatsApp Button */
+  .whatsapp-button a {
+    display: inline-block;
+    background-color: #25d366;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .whatsapp-button a:hover {
+    background-color: #1ebe57;
+  }
+  
+  /* Joining Details */
+  .joining-details {
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  /* Masterclass Note */
+  .masterclass-note {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+  }
+  
