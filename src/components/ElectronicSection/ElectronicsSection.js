@@ -11,7 +11,7 @@ const ElectronicsSection = () => {
   };
   const electronicsData = [
     { id: 1,  imgSrc: '/images/1.png', text: 'Macbook Support',link: '/macbook-repair' } ,
-    { imgSrc: '/images/4.png', text: 'Laptop Support', link: '/windows-repair'  },
+    { imgSrc: '/images/4.png', text: 'Laptop Support', link: '/laptop-repair'  },
     { imgSrc: '/images/3.png', text: 'Desktop suppport', link: '/desktop-repair' },
     { imgSrc: '/images/2.png', text: 'Printer Support', link: '/printer-repair' },
     { imgSrc: '/images/5.png', text: 'Subscription', link: '/upgrade' },

@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
  // Make sure you have your Navbar component path correct
-import './Component.css'; // Add your custom styles here
+import './Printer.css'; // Add your custom styles here
 // import { HiChevronDown } from 'react-icons/hi';
 import { FaCheck } from 'react-icons/fa';
 import Cart from '../../Cartpage/Cart';
@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet-async';
 
 // 
 
-const PrinterRepair = () => {
+const Printer = () => {
   const [activeServiceType, setActiveServiceType] = useState('split');
   const [expandedCard, setExpandedCard] = useState(null);
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -68,7 +68,7 @@ const PrinterRepair = () => {
   return (
     <>
       <Helmet>
-        <title>Printer Repair Service | Door2fy - Reliable & Efficient Solutions</title>
+        <title>Printer Repair Service | Tech Support - Reliable & Efficient Solutions</title>
         <meta name="description" content="Need expert printer repair? Door2fy offers reliable, fast printer repair services. Get your printer back in top shape with our skilled technicians. Contact us today!"/>
       </Helmet>
       
@@ -188,30 +188,8 @@ const PrinterRepair = () => {
             <div className="card-right">
               <p>₹{service.price}</p>
             <button className="add-button" onClick={() => handleAddToCart(service)}>Add+</button>
-              {/* <button className="toggle-btn" onClick={() => handleExpandClick(index)}>
-            {expandedCard === index ? <FaChevronUp /> : <FaChevronDown />}
-          </button> */}
             </div>
            
-            {/* {expandedCard === index && (
-              <ul className="service-details">
-                <li>Cleaning of AC</li>
-                <li>Gas pressure check</li>
-                <li>Cleaning of the outdoor unit</li>
-                <li>Pre and post service checks</li>
-                <li>Cleaning of the area</li>
-              </ul>
-            )} */}
-                {/* {expandedCard === index && (
-          <div className="card-details">
-            <ul>
-              <li><FaCheck className="check-icon" /> Cleaning of AC filters, cooling coil, drain tray, etc.</li>
-              <li><FaCheck className="check-icon" /> Gas pressure check.</li>
-              <li><FaCheck className="check-icon" /> Cleaning of the outdoor unit with water jet.</li>
-              <li><FaCheck className="check-icon" /> Pre and post-service check of AC controls.</li>
-            </ul> 
-            </div>
-        )} */}
           </div>
           
         ))}
@@ -225,7 +203,7 @@ const PrinterRepair = () => {
 
     </div>
     <div className="why-choose-section">
-      <h2 className="why-choose-heading">Why Choose Door2fy Printer Repair Service in Delhi?</h2>
+      <h2 className="why-choose-heading">Why Choose Printer Repair Service in Delhi?</h2>
       <div className="why-choose-grid">
         <div className="why-choose-card">
           <img
@@ -275,5 +253,5 @@ const PrinterRepair = () => {
   );
 };
 
-export default PrinterRepair;
+export default Printer;
 

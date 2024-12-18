@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import Cart from '../Cartpage/Cart';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -49,6 +50,10 @@ const Login = () => {
 
   return (
     <>
+           <Helmet>
+           <title>Login | Tech Support</title>
+           <meta name="description" content="Get your MacBook repaired by certified experts at Door2fy. Fast, reliable, and affordable MacBook repair services. Book your appointment online today!"/>
+         </Helmet>
       <Navbar toggleCart={toggleCart} cartItemCount={0} />
       {isCartOpen && <Cart onClose={closeCart} />}
       <div className="login-container">

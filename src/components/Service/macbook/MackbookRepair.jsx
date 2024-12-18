@@ -69,7 +69,7 @@ const MacbookRepair = () => {
   return (
     <>
     <Helmet>
-      <title>Expert MacBook Repair Services - Door2fy | Fast & Reliable</title>
+      <title>Expert MacBook Repair Services - Tech Support | Fast & Reliable</title>
       <meta name="description" content="Get your MacBook repaired by certified experts at Door2fy. Fast, reliable, and affordable MacBook repair services. Book your appointment online today!"/>
     </Helmet>
       
@@ -189,30 +189,7 @@ const MacbookRepair = () => {
             <div className="card-right">
               <p>₹{service.price}</p>
             <button className="add-button" onClick={() => handleAddToCart(service)}>Add+</button>
-              {/* <button className="toggle-btn" onClick={() => handleExpandClick(index)}>
-            {expandedCard === index ? <FaChevronUp /> : <FaChevronDown />}
-          </button> */}
             </div>
-           
-            {/* {expandedCard === index && (
-              <ul className="service-details">
-                <li>Cleaning of AC</li>
-                <li>Gas pressure check</li>
-                <li>Cleaning of the outdoor unit</li>
-                <li>Pre and post service checks</li>
-                <li>Cleaning of the area</li>
-              </ul>
-            )} */}
-                {/* {expandedCard === index && (
-          <div className="card-details">
-            <ul>
-              <li><FaCheck className="check-icon" /> Cleaning of AC filters, cooling coil, drain tray, etc.</li>
-              <li><FaCheck className="check-icon" /> Gas pressure check.</li>
-              <li><FaCheck className="check-icon" /> Cleaning of the outdoor unit with water jet.</li>
-              <li><FaCheck className="check-icon" /> Pre and post-service check of AC controls.</li>
-            </ul> 
-            </div>
-        )} */}
           </div>
           
         ))}
@@ -226,7 +203,7 @@ const MacbookRepair = () => {
 
     </div>
     <div className="why-choose-section">
-      <h2 className="why-choose-heading">Why Choose Door2fy Mackbook Repair Service in Delhi?</h2>
+      <h2 className="why-choose-heading">Why Choose Mackbook Repair Service in Delhi?</h2>
       <div className="why-choose-grid">
         <div className="why-choose-card">
           <img

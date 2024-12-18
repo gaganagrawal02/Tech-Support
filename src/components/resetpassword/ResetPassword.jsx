@@ -5,6 +5,7 @@ import './ResetPassword.css';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import Cart from '../Cartpage/Cart';
+import { Helmet } from 'react-helmet-async';
 
 const ResetPassword = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -43,6 +44,10 @@ const ResetPassword = () => {
 
   return (
     <>
+           <Helmet>
+           <title>Reset Password | Tech Support</title>
+           <meta name="description" content="Get your MacBook repaired by certified experts at Door2fy. Fast, reliable, and affordable MacBook repair services. Book your appointment online today!"/>
+         </Helmet>
       <Navbar toggleCart={toggleCart} cartItemCount={0} />
       {isCartOpen && <Cart onClose={closeCart} />}
       <div className="reset-password-container">

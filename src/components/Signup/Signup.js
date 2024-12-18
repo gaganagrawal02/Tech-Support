@@ -1,22 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 import './Signup.css';
 import Navbar from '../Navbar/Navbar';
 import Cart from '../Cartpage/Cart';
 import Footer from '../Footer/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const Signup = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
-
-  const toggleCart = () => {
-    setIsCartOpen(!isCartOpen);
-  };
-
-  const closeCart = () => {
-    setIsCartOpen(false);
-  };
-
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -24,6 +17,10 @@ const Signup = () => {
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // React Router hook
+
+  const toggleCart = () => setIsCartOpen(!isCartOpen);
+  const closeCart = () => setIsCartOpen(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,6 +35,9 @@ const Signup = () => {
       const response = await axios.post('http://localhost:5000/api/auth/signup', formData);
       setMessage(response.data.message);
       setFormData({ username: '', email: '', password: '' });
+      
+      // Redirect to the checkout page
+      navigate('/checkout');
     } catch (error) {
       setError(error.response?.data?.message || 'Error occurred while registering user');
     }
@@ -45,7 +45,14 @@ const Signup = () => {
 
   return (
     <>
-      <Navbar toggleCart={toggleCart} cartItemCount={0} /> {/* Set cartItemCount to 0 for empty cart */}
+      <Helmet>
+        <title>SignUp | Tech Support</title>
+        <meta
+          name="description"
+          content="Get your MacBook repaired by certified experts at Door2fy. Fast, reliable, and affordable MacBook repair services. Book your appointment online today!"
+        />
+      </Helmet>
+      <Navbar toggleCart={toggleCart} cartItemCount={0} />
       {isCartOpen && <Cart onClose={closeCart} />}
       <div className="signup-container">
         <h1>Join Our Feedback</h1>
@@ -66,7 +73,7 @@ const Signup = () => {
           <input
             type="email"
             name="email"
-             className="signup-input"
+            className="signup-input"
             value={formData.email}
             onChange={handleChange}
             required
@@ -75,12 +82,14 @@ const Signup = () => {
           <input
             type="password"
             name="password"
-             className="signup-input"
+            className="signup-input"
             value={formData.password}
             onChange={handleChange}
             required
           />
-          <button className="signup-bt" type="submit">Sign Up</button>
+          <button className="signup-bt" type="submit">
+            Sign Up
+          </button>
         </form>
         <p className="login-link">
           Already a member? <a href="/login">Sign in</a>

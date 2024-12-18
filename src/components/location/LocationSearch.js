@@ -17,9 +17,9 @@ const LocationSearch = () => {
     setQuery(e.target.value);
     // Simulate fetching data
     setResults([
-      { name: 'Laptop', category: 'Gadgets', link: '/upgrade' },
-      { name: 'Tablet', category: 'Gadgets', link: '/desktop-repair' },
-      { name: 'Laptop', category: 'Gadgets', link: '/windows-repair' },
+      { name: 'Laptop', category: 'Gadgets', link: '/laptop-repair' },
+      { name: 'Mackbook', category: 'Gadgets', link: '/macbook-repair' },
+      { name: 'Printer', category: 'Gadgets', link: '/printer-repair' },
     ]);
     setShowResults(true);
   };

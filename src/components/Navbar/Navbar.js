@@ -55,7 +55,7 @@ const Navbar = ({ toggleCart, cartItemCount }) => {
       <div></div>
       <ul className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
         <li>
-        <Link to="/windows-repair" className="navbar-lines">Devices and Plans </Link></li>
+        <Link to="/laptop-repair" className="navbar-lines">Devices and Plans </Link></li>
         <li><Link to="/desktop-repair"className="navbar-lines" >Desktop Support</Link></li>
         <li> <Link to="/upgrade"className="navbar-lines" >Subscription</Link></li>
         <li> <Link to="/codingIssue"className="navbar-lines" >Coding issue</Link></li>

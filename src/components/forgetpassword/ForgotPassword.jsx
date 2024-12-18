@@ -4,6 +4,7 @@ import './ForgotPassword.css';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 import Cart from '../Cartpage/Cart';
+import { Helmet } from 'react-helmet-async';
 
 const ForgotPassword = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -30,6 +31,10 @@ const ForgotPassword = () => {
 
   return (
     <>
+           <Helmet>
+           <title>Forgot Password | Tech Support</title>
+           <meta name="description" content="Get your MacBook repaired by certified experts at Door2fy. Fast, reliable, and affordable MacBook repair services. Book your appointment online today!"/>
+         </Helmet>
       <Navbar toggleCart={toggleCart} cartItemCount={0} />
       {isCartOpen && <Cart onClose={closeCart} />}
       <div className="forgot-password-container">

@@ -6,7 +6,7 @@ import Footer from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import Cart from '../Cartpage/Cart';
 import { useNavigate } from 'react-router-dom';
-
+import { Helmet } from 'react-helmet-async';
 import axios from "axios";
 const CheckoutPage = () => {
   
@@ -100,15 +100,6 @@ const CheckoutPage = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   
-  useEffect(() => {
-   
-
-    // Retrieve cart items from localStorage when the page loads
-    const storedCartItems = localStorage.getItem('cartItems');
-    if (storedCartItems) {
-      setCartItems(JSON.parse(storedCartItems));
-    }
-  }, []);
 
   const toggleCart = () => {
     setIsCartOpen(!isCartOpen);
@@ -191,7 +182,11 @@ const handleFormSubmit = async (e) => {
   }};
   return (
     <>
-
+       <Helmet>
+          <title>Checkout Page | Tech Support</title>
+          <meta name ="description" content="Get in touch with Door2fy for your technical service needs, coding issues, device repairs, cybersecurity, and more. Reach out to our expert team today!" />
+    
+        </Helmet>
     <Navbar toggleCart={toggleCart} cartItemCount={cartItems.length} /> {/* Set cartItemCount to 0 for empty cart */}
       
       {isCartOpen && (
@@ -213,34 +208,6 @@ const handleFormSubmit = async (e) => {
           </div>
           <div className="underline-checkout"></div>
 
-          {/* Cart Details Section */}
-          {/* {activeTab === 'cart' && (
-            <div className="cart-details">
-              <div className="card-product-details">
-                <div className="product-row">
-                  <h2>Product Name</h2>
-                  <h2>Plan/Service Type</h2>
-                  <h2>Total Amount</h2>
-                </div>
-                {cartItems.map((item) => (
-                  <div className="service-name" key={item.id}>
-                    <p>{item.name}</p>
-                    <p>{item.quantity} x {item.name}</p>
-                    <p>₹{item.price * item.quantity}</p>
-                  </div>
-                ))}
-                <div className="total-amount">
-                  <p>Total Amount: ₹{calculateTotal()}</p>
-                </div>
-              </div>
-                          
-          
-            </div>
-          )} */}
-
-              {/* Service Details Form */}
-{/* Service Details Form */}
-{/* Service Details Form */}
 <div className="card-service-details">
       <h2>Enter Service Details</h2>
       <div className="underline-service"></div>

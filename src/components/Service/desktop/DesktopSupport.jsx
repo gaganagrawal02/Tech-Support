@@ -69,7 +69,7 @@ const DesktopSupport = () => {
   return (
     <>
       <Helmet>
-        <title>Door2fy Desktop Support | Expert Technical Assistance & Solutions</title>
+        <title>Tech Support | Desktop Support</title>
         <meta name="description" content="Get reliable desktop support with Door2fy. Our experts provide quick fixes, troubleshooting, and ongoing maintenance for seamless computer performance." />
       </Helmet>
 
@@ -189,30 +189,8 @@ const DesktopSupport = () => {
             <div className="card-right">
               <p>₹{service.price}</p>
             <button className="add-button" onClick={() => handleAddToCart(service)}>Add+</button>
-              {/* <button className="toggle-btn" onClick={() => handleExpandClick(index)}>
-            {expandedCard === index ? <FaChevronUp /> : <FaChevronDown />}
-          </button> */}
             </div>
-           
-            {/* {expandedCard === index && (
-              <ul className="service-details">
-                <li>Cleaning of AC</li>
-                <li>Gas pressure check</li>
-                <li>Cleaning of the outdoor unit</li>
-                <li>Pre and post service checks</li>
-                <li>Cleaning of the area</li>
-              </ul>
-            )} */}
-                {/* {expandedCard === index && (
-          <div className="card-details">
-            <ul>
-              <li><FaCheck className="check-icon" /> Cleaning of AC filters, cooling coil, drain tray, etc.</li>
-              <li><FaCheck className="check-icon" /> Gas pressure check.</li>
-              <li><FaCheck className="check-icon" /> Cleaning of the outdoor unit with water jet.</li>
-              <li><FaCheck className="check-icon" /> Pre and post-service check of AC controls.</li>
-            </ul> 
-            </div>
-        )} */}
+
           </div>
           
         ))}
@@ -226,7 +204,7 @@ const DesktopSupport = () => {
 
     </div>
     <div className="why-choose-section">
-      <h2 className="why-choose-heading">Why Choose College Project Desktop Repair Service in Delhi?</h2>
+      <h2 className="why-choose-heading">Why Choose Desktop Repair Service in Delhi?</h2>
       <div className="why-choose-grid">
         <div className="why-choose-card">
           <img

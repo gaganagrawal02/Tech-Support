@@ -17,12 +17,7 @@ const ACRepairPage = () => {
   const [cartItems, setCartItems] = useState([]);
   const [notification, setNotification] = useState(null);
 
-  useEffect(() => {
-    const storedCartItems = localStorage.getItem('cartItems');
-    if (storedCartItems) {
-      setCartItems(JSON.parse(storedCartItems));
-    }
-  }, []);
+
   const handleServiceTypeChange = (type) => {
     setActiveServiceType(type);
     setExpandedCard(null); // Reset the expanded card when switching service types
@@ -34,14 +29,11 @@ const ACRepairPage = () => {
 
   const handleAddToCart = (service) => {
     if (cartItems.length === 0) {
-      const updatedCart = [{ ...service, quantity: 1 }];
-      setCartItems(updatedCart);
-      setNotification('Added to your cart!');
-
-      // Store the updated cart in localStorage
-      localStorage.setItem('cartItems', JSON.stringify(updatedCart));
-
+      setCartItems([{ ...service, quantity: 1 }]);
+      setNotification(`Added to your cart!`); // Set the notification message
       setTimeout(() => setNotification(null), 3000);
+    } else {
+      
     }
   };
 
@@ -198,30 +190,7 @@ const ACRepairPage = () => {
             <div className="card-right">
               <p>₹{service.price}</p>
             <button className="add-button" onClick={() => handleAddToCart(service)}>Add+</button>
-              {/* <button className="toggle-btn" onClick={() => handleExpandClick(index)}>
-            {expandedCard === index ? <FaChevronUp /> : <FaChevronDown />}
-          </button> */}
             </div>
-           
-            {/* {expandedCard === index && (
-              <ul className="service-details">
-                <li>Cleaning of AC</li>
-                <li>Gas pressure check</li>
-                <li>Cleaning of the outdoor unit</li>
-                <li>Pre and post service checks</li>
-                <li>Cleaning of the area</li>
-              </ul>
-            )} */}
-                {/* {expandedCard === index && (
-          <div className="card-details">
-            <ul>
-              <li><FaCheck className="check-icon" /> Cleaning of AC filters, cooling coil, drain tray, etc.</li>
-              <li><FaCheck className="check-icon" /> Gas pressure check.</li>
-              <li><FaCheck className="check-icon" /> Cleaning of the outdoor unit with water jet.</li>
-              <li><FaCheck className="check-icon" /> Pre and post-service check of AC controls.</li>
-            </ul> 
-            </div>
-        )} */}
           </div>
           
         ))}
@@ -235,7 +204,7 @@ const ACRepairPage = () => {
 
     </div>
     <div className="why-choose-section">
-      <h2 className="why-choose-heading">Why Choose Door2fy Laptop Repair Service in Delhi?</h2>
+      <h2 className="why-choose-heading">Why Choose Laptop Repair Service in Delhi?</h2>
       <div className="why-choose-grid">
         <div className="why-choose-card">
           <img

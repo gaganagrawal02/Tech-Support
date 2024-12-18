@@ -43,7 +43,7 @@ const ContactUs = () => {
   return (
     <>
         <Helmet>
-          <title>Contact Us | Door2fy - Doorstep service in just 10 minutes</title>
+          <title>Contact Us | Tech Support</title>
           <meta name ="description" content="Get in touch with Door2fy for your technical service needs, coding issues, device repairs, cybersecurity, and more. Reach out to our expert team today!" />
     
         </Helmet>

@@ -1,63 +1,156 @@
+/* General Styling for Order Confirmation Page */
 .order-confirmation-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f9f9f9;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   
-  .confirmation-container {
-    text-align: center;
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  margin-top:100px;
+}
+
+/* Confirmation Container */
+.confirmation-container {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.success-icon {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.confirmation-container h1 {
+  color: #28a745;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.confirmation-container p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.order-details {
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.order-details h2 {
+  margin-bottom: 0.8rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.order-details p {
+  margin: 0.6rem 0;
+  font-size: 1rem;
+}
+
+/* Thank You Section */
+.thankyou-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-checkmark span {
+  font-size: 3rem;
+  color: #28a745;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.thankyou-heading {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 1rem 0;
+}
+
+.thankyou-instructions,
+.updates-heading,
+.joining-details,
+.masterclass-note {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.8rem 0;
+}
+
+.whatsapp-button a {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  margin: 1.5rem 0;
+}
+
+.whatsapp-button a:hover {
+  background-color: #20b458;
+}
+
+.back-to-home-btn {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 16px;
+  font-size: 14px;
+  border-radius: 50px;
+  margin-top: 1.5rem;
+}
+
+.back-to-home-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-confirmation-page {
+    padding: 10px;
+    flex-direction: column;
   }
-  
-  .success-icon {
-    width: 100px;
-    margin-bottom: 1rem;
+
+  .confirmation-container,
+  .thankyou-container {
+    padding: 1.5rem;
   }
-  
-  .confirmation-container h1 {
-    color: #28a745;
-    margin-bottom: 1rem;
+
+  .confirmation-container h1,
+  .thankyou-heading {
+    font-size: 1.5rem;
   }
-  
-  .confirmation-container p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: #555;
+
+  .confirmation-container p,
+  .thankyou-instructions,
+  .updates-heading,
+  .joining-details,
+  .masterclass-note {
+    font-size: 0.9rem;
   }
-  
-  .order-details {
-    text-align: left;
-    margin: 1rem 0;
-  }
-  
-  .order-details h2 {
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-  
-  .order-details p {
-    margin: 0.5rem 0;
-  }
-  
+
+  .whatsapp-button a,
   .back-to-home-btn {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
   }
-  
-  .back-to-home-btn:hover {
-    background-color: #218838;
+
+  .icon-checkmark span {
+    font-size: 2.5rem;
   }
-  
+}

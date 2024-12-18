@@ -18,9 +18,9 @@ const Footer = () => {
           <div className="footer-section">
             <h3>Company</h3>
             <ul>
-              <li><Link to="/aboutus">About Us</Link></li>
-              <li><Link to="/terms-of-services">Terms & Conditions</Link></li>
-              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/">About Us</Link></li>
+              <li><Link to="/">Terms & Conditions</Link></li>
+              <li><Link to="/">Privacy Policy</Link></li>
               <li><Link to="/">Anti-Discrimination Policy</Link></li>
               <li><Link to="/">UC Impact</Link></li>
               <li><Link to="/">Careers</Link></li>
@@ -31,9 +31,9 @@ const Footer = () => {
           <div className="footer-section">
             <h3>For Customers</h3>
             <ul>
-              <li><Link to="/refundable-policy">Refundable Policy</Link></li>
+              <li><Link to="/">Refundable Policy</Link></li>
               <li><Link to="/">Categories Near You</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/">Blog</Link></li>
               <li><Link to="/contactUs">Contact Us</Link></li>
             </ul>
           </div>
@@ -78,7 +78,7 @@ const Footer = () => {
   
         {/* Copyright Notice */}
         <div className="footer-bottom">
-          <p>© Copyright 2024 College Project All rights reserved.</p>
+          <p>© Copyright 2024  All rights reserved.</p>
         </div>
       </footer>
     </>

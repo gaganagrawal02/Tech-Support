@@ -3,6 +3,7 @@ import "./Register.css"; // Import CSS for styling
 import Navbar from "../Navbar/Navbar";
 import Cart from "../Cartpage/Cart";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 const RegisterPage = () => {
   const [homeService, setHomeService] = useState("");
@@ -19,6 +20,11 @@ const RegisterPage = () => {
 
   return (
     <>
+          <Helmet>
+              <title>Register | Tech Support</title>
+              <meta name ="description" content="Get in touch with Door2fy for your technical service needs, coding issues, device repairs, cybersecurity, and more. Reach out to our expert team today!" />
+        
+            </Helmet>
       <Navbar toggleCart={toggleCart} cartItemCount={0} /> {/* Set cartItemCount to 0 for empty cart */}
       {isCartOpen && <Cart onClose={closeCart} />}
       

@@ -2,10 +2,15 @@ import React from "react";
 import "./ThankuPage.css";
 import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 const ThankYouPage = () => {
   return (
     <>
+        <Helmet>
+      <title>ThankuPage | Tech Support</title>
+      <meta name="description" content="Door2fy offers expert tech services for coding, MacBook, desktop, printer, and server issues. Fast, reliable, and professional solutions at your doorstep." />
+    </Helmet>
     <Navbar/>
     <div className="thankyou-container">
       {/* Checkmark Icon */}

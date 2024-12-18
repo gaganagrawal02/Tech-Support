@@ -68,7 +68,7 @@ const Upgrade = () => {
   return (
    <>
    <Helmet>
-      <title>Upgrade Your Door2fy Plan - Unlock Premium Tech Services Today</title>
+      <title>Upgrade Your Tech Support Plan - Unlock Premium Tech Services Today</title>
       <meta name="description" content="Enhance your Door2fy experience by upgrading to premium plans. Get access to advanced tech support, priority service, and exclusive features. Upgrade now!"/>
    </Helmet>
 
@@ -220,7 +220,7 @@ const Upgrade = () => {
 
     </div>
     <div className="why-choose-section">
-      <h2 className="why-choose-heading">Why Choose Door2fy Upgrade Service in Delhi?</h2>
+      <h2 className="why-choose-heading">Why Choose Upgrade Service in Delhi?</h2>
       <div className="why-choose-grid">
         <div className="why-choose-card">
           <img
