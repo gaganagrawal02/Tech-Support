@@ -45,10 +45,7 @@ const serviceSlots = [
   },
 ];
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Database connected successfully'))
   .catch((error) => console.error('Database connection error:', error));
 
