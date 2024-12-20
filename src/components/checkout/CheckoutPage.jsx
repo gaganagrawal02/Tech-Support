@@ -20,7 +20,7 @@ const CheckoutPage = () => {
   
     try {
       // Step 1: Create an order on the backend
-      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/payment/create-order`, {
+      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/payment/create-order`, {
         amount: 500, // Amount in INR
         currency: "INR",
       });
@@ -51,7 +51,7 @@ const CheckoutPage = () => {
         key: "rzp_test_ALRfjpu2T2UZO0", // Replace with Razorpay Key ID
         amount: orderAmount, // Amount in paise (₹500.00 -> 50000 paise)
         currency,
-        name: "College Project",
+        name: "Tech Support",
         description: "Payment for your service booking",
         image: "/logo.png", // Replace with your company logo
         order_id, // Order ID from backend
@@ -60,7 +60,7 @@ const CheckoutPage = () => {
 
           // Step 4: Verify payment on the backend
           const verification = await axios.post(
-            `${process.env.REACT_APP_BASE_URL}/payment/verify-payment`,
+            `${process.env.REACT_APP_BASE_URL}/api/payment/verify-payment`,
             {
               razorpay_order_id,
               razorpay_payment_id,
@@ -122,7 +122,7 @@ const CheckoutPage = () => {
       return;
     }
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/confirm-order`, {
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/confirm-order`, {
         selectedDate,
         selectedTimeSlot,
       });
@@ -163,7 +163,7 @@ const handleFormSubmit = async (e) => {
 
   try {
     const response = await axios.post(
-      `${process.env.REACT_APP_BASE_URL}/users/saveDetails`, // Correct endpoint
+      `${process.env.REACT_APP_BASE_URL}/api/users/saveDetails`, // Correct endpoint
       formData
     );
 
