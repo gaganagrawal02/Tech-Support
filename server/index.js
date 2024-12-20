@@ -51,8 +51,8 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/forgot-password', forgotPasswordRoutes);
-app.use('/api/reset-password', resetPasswordRoutes);
+app.use('/api', forgotPasswordRoutes);
+app.use('/api', resetPasswordRoutes);
 app.use('/api/payment', razorpayRoutes); 
 app.use("/api/users", userRoutes);
 

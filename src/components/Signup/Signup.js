@@ -32,7 +32,7 @@ const Signup = () => {
     setMessage('');
     setError('');
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', formData);
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/signup`, formData);
       setMessage(response.data.message);
       setFormData({ username: '', email: '', password: '' });
       

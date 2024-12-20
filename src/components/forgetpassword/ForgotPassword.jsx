@@ -22,7 +22,7 @@ const ForgotPassword = () => {
   const handleForgotPassword = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/forgot-password', { email });
+      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/forgot-password`, { email });
       setMessage(response.data.message);
     } catch (error) {
       setMessage(error.response?.data?.message || 'Error sending reset email');
