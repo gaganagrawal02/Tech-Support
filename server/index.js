@@ -16,7 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(cors());
 const serviceSlots = [
   {
@@ -72,4 +72,11 @@ app.post("/api/confirm-order", (req, res) => {
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server running successfully `);
+});
+
+app.get("/", (req, res) => {
+	return res.json({
+		success:true,
+		message:'Your server is up and running....'
+	});
 });
